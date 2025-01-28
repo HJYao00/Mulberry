@@ -1,11 +1,11 @@
 
 Here, we provide detailed instructions for running CoMCTS, along with illustrative examples of its inputs and outputs.
 
-You can try out CoMCTS reasoning with the data in the [demo_data](https://github.com/HJYao00/Mulberry/tree/main/comcts/demo_data) folder.
+You can try out CoMCTS reasoning with the data in the demo_data) folder.
 
 ## Start Search
 
-Our CoMCTS code now supports reasoning path search using [GPT-4o](https://openai.com/index/hello-gpt-4o/), [LLaMA-3.2-Vision series](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/), and [Qwen-2-VL series](https://github.com/QwenLM/Qwen2-VL) models. 
+Our CoMCTS code now supports reasoning path search using GPT-4o, LLaMA-3.2-Vision series, and Qwen-2-VL series models. 
 
 ```bash
 CUDA_VISIBLE_DEVICES='0,1,2,3,4,5,6,7' python code/run_comcts.py \
@@ -25,7 +25,7 @@ CUDA_VISIBLE_DEVICES='0,1,2,3,4,5,6,7' python code/run_comcts.py \
 
 ## Input Data Examples
 
-We provide several input samples in the [demo_data](https://github.com/HJYao00/Mulberry/tree/main/comcts/demo_data) folder, randomly selected from the [Geo3k](https://aclanthology.org/2021.acl-long.528.pdf) dataset.
+We provide several input samples in the demo_data folder, randomly selected from the Geo3k dataset.
 
 
 `"image"`: `"image"` is either the absolute path to the image or a path relative to `image_dir_path`.
