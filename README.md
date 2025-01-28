@@ -5,6 +5,12 @@
 
 </div>
 
+
+## Data Constrution with CoMCTS
+We release **CoMCTS Code** for generating reasoning and reflection data, which leverage collective knowledge from multiple models to collaboratively conjecture, search and identify effective reasoning paths toward correct answers via four iterative operations including Expansion, Simulation and Error Positioning, Backpropagation, and Selection.
+
+Please refer comcts directory for more details.
+
 ## Reasoning Inference
 We provide the inference code for running Mulberry models, which can output detailed step-by-step reasoning.
 
@@ -30,11 +36,6 @@ python infer.py \
 ```
 
 </details>
-
-## Data Constrution with CoMCTS
-We release **CoMCTS Code** for generating reasoning and reflection data, which leverage collective knowledge from multiple models to collaboratively conjecture, search and identify effective reasoning paths toward correct answers via four iterative operations including Expansion, Simulation and Error Positioning, Backpropagation, and Selection.
-
-Please refer comcts directory for more details.
 
 ## Training
 We use LLaMA-Factory to fine-tune the Mulberry models. We provide the training instructions and configs here.
