@@ -2,46 +2,8 @@
 
 <h1> <img src="figure/mulberry.png" style="vertical-align: -10px;" :height="50px" width="50px"> Mulberry: Empowering MLLM with o1-like Reasoning and Reflection via Collective Monte Carlo Tree Search </h1>
 
-<h5 align="center"> If you find this project useful, please give us a star🌟.
 
-
-<h5 align="center"> 
-
-<a href='https://arxiv.org/abs/2412.18319'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
-<a href='https://huggingface.co/HuanjinYao/Mulberry_llava_8b'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'>
-<a href='https://huggingface.co/datasets/HuanjinYao/Mulberry-SFT'><img src='https://img.shields.io/badge/Dataset-Huggingface-yellow'>
-<!--<a href='https://huggingface.co/collections/HuanjinYao/denseconnector-66500e173fc8c9f05dc98dea'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
-[![zhihu](https://img.shields.io/badge/-知乎-000000?logo=zhihu&logoColor=0084FF)](https://zhuanlan.zhihu.com/p/700000183)
-<a href='https://huggingface.co/spaces/HuanjinYao/DenseConnector-v1.5-8B'><img src='https://img.shields.io/badge/🤗-Open%20In%20Spaces-blue.svg'></a>-->
-
-
-[Huanjin Yao](https://scholar.google.com/citations?user=pDtsCBQAAAAJ&hl=zh-CN)<sup>2,3*</sup>,
-[Jiaxing Huang](https://jxhuang0508.github.io/)<sup>1*✉️</sup>,
-[Wenhao Wu](https://whwu95.github.io/)<sup>3</sup>,
-[Jingyi Zhang]()<sup>1</sup>,
-[Yibo Wang]()<sup>2</sup>,
-[Shunyu Liu]()<sup>1</sup>,
-[Yingjie Wang]()<sup>1</sup>,
-
-[Yuxin Song]()<sup>3</sup>,
-[Haocheng Feng]()<sup>3</sup>,
-[Li Shen]()<sup>4</sup>,
-[Dacheng Tao]()<sup>1</sup>
-
-
-<sup>1</sup>[Nanyang Technological University](https://www.ntu.edu.sg/), <sup>2</sup>[Tsinghua University](https://www.tsinghua.edu.cn/en/), <sup>3</sup>[Baidu](https://vis.baidu.com/#/), <sup>4</sup>[SYSU](https://www.sysu.edu.cn/sysuen/)
-
-<sup>*</sup>Equal Contribution,       <sup>✉️</sup>Corresponding Author
-
-</h5>
 </div>
-
-
-## News
-- [x] **`Jan 26, 2025.`** We release [Mulberry-260K](https://huggingface.co/datasets/HuanjinYao/Mulberry-SFT) step-by-step reasoning SFT data and [training code](https://github.com/HJYao00/Mulberry?tab=readme-ov-file#training).
-- [x] **`Jan 14, 2025.`** We release the [instructions](https://github.com/HJYao00/Mulberry?tab=readme-ov-file#evaluation) and [code](https://github.com/HJYao00/Mulberry/tree/main/evaluation) for evaluating Mulberry-LLaVA-8B on different benchmarks through the VLMEvalKit tool.
-- [x] **`Jan 08, 2025.`** We release the **CoMCTS code** for searching step-by-step reasoning and reflection data, along with the [**Mulberry-LLaVA-8B**](https://huggingface.co/HuanjinYao/Mulberry_llava_8b) model and its **reasoning inference code**.
-- [x] **`Dec 24, 2024.`** We release our paper in [arxiv](https://arxiv.org/abs/2412.18319).
 
 ## Reasoning Inference
 We provide the inference code for running Mulberry models, which can output detailed step-by-step reasoning.
@@ -49,7 +11,7 @@ We provide the inference code for running Mulberry models, which can output deta
 ```bash
 python infer.py \
 --model 'Mulberry_llava_8b' \
---model_path 'HuanjinYao/Mulberry_llava_8b' \
+--model_path '<Your_Model_Path>' \
 --question 'Question: <Your_Question>' \
 --img_path '<Your_Img_Path>' 
 ```
@@ -61,7 +23,7 @@ python infer.py \
 ```bash
 python infer.py \
 --model 'Mulberry_llava_8b' \
---model_path 'HuanjinYao/Mulberry_llava_8b' \
+--model_path '<Your_Model_Path>' \
 --question 'Question: <Your_Question>' \
 --img_path '<Your_Img_Path>' \
 --only_output_final_answer
@@ -72,14 +34,14 @@ python infer.py \
 ## Data Constrution with CoMCTS
 We release **CoMCTS Code** for generating reasoning and reflection data, which leverage collective knowledge from multiple models to collaboratively conjecture, search and identify effective reasoning paths toward correct answers via four iterative operations including Expansion, Simulation and Error Positioning, Backpropagation, and Selection.
 
-Please refer [here](https://github.com/HJYao00/Mulberry/tree/main/comcts) for more details.
+Please refer comcts directory for more details.
 
 ## Training
-We use [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) to fine-tune the Mulberry models. We provide the training instructions and configs here.
+We use LLaMA-Factory to fine-tune the Mulberry models. We provide the training instructions and configs here.
 
-First, install LLaMA-Factory according to the [official_instruction](https://github.com/hiyouga/LLaMA-Factory?tab=readme-ov-file#installation).
+First, install LLaMA-Factory according to the official instruction.
 
-Then, refer [here](https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README.md) and update the following customized dataset into `dataset_info.json` in LLaMA-Factory.
+Then, refer official instruction and update the following customized dataset into `dataset_info.json` in LLaMA-Factory.
 ```bash
 "mulberry": {
     "file_name": "./mulberry_sft.json",
@@ -103,11 +65,11 @@ llamafactory-cli train examples/train_full/mulberry_llava_8b_full_sft.yaml
 ```
 
 ## Evaluation
-We use [VLMEvalKit](https://github.com/open-compass/VLMEvalKit) to evaluate the Mulberry models on different benchmarks. We provide the evaluation instructions and key code here.
+We use VLMEvalKit to evaluate the Mulberry models on different benchmarks. We provide the evaluation instructions and key code here.
 
-First, you need to install VLMEvalKit according to the [official instructions](https://github.com/open-compass/VLMEvalKit/blob/main/docs/en/Quickstart.md).
+First, you need to install VLMEvalKit according to the official instructions.
 
-Next, replace the `llava.py` file in `VLMEvalKit-main/vlmeval/vlm/llava/` with the `llava.py` file we provide [here](https://github.com/HJYao00/Mulberry/tree/main/evaluation).
+Next, replace the `llava.py` file in `VLMEvalKit-main/vlmeval/vlm/llava/` with the `llava.py` file we provide evaluation directory.
 
 Finally, you can use the following command to perform the evaluation.
 ```bash
@@ -117,7 +79,7 @@ python run.py --data MathVista_MINI --model llava_next_llama3 --verbose
 
 ## Main Results
 
-We conduct extensive experiments with four powerful baseline models, including [LLaVA-Next-8b](https://huggingface.co/llava-hf/llama3-llava-next-8b-hf), [LLaMA-3.2-Vision-11B-Instruct](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct), [Qwen2-VL-2B](https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct) and [Qwen2-VL-7B](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct). The **Main Results** comparing the Mulberry models with other state-of-the-art models across several popular benchmarks are shown in the figure below.
+We conduct extensive experiments with four powerful baseline models, including LLaVA-Next-8b, LLaMA-3.2-Vision-11B-Instruct, Qwen2-VL-2B and Qwen2-VL-7B. The **Main Results** comparing the Mulberry models with other state-of-the-art models across several popular benchmarks are shown in the figure below.
 
 <div align=center>
 <img width="650" alt="image" src="figure/main_results.png">
@@ -131,22 +93,6 @@ Mulberry creates rich, explicit and well-defined reasoning steps with comprehens
 <img width="700" alt="image" src="figure/qualitative_results_reasoning.png">
 </div>
 
-## Citation
-If you find this repository is useful, please star🌟 this repo and cite🖇️ our paper.
-```bibtex
-@article{yao2024mulberry,
-  title={Mulberry: Empowering mllm with o1-like reasoning and reflection via collective monte carlo tree search},
-  author={Yao, Huanjin and Huang, Jiaxing and Wu, Wenhao and Zhang, Jingyi and Wang, Yibo and Liu, Shunyu and Wang, Yingjie and Song, Yuxin and Feng, Haocheng and Shen, Li and others},
-  journal={arXiv preprint arXiv:2412.18319},
-  year={2024}
-}
-```
-
-
-## Acknowledgment
-Our work is primarily based on the following codebases. We are sincerely grateful for their work.
-- [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory): We use llama-factory to fine-tune Mulberry Models.
-- [VLMEvalKit](https://github.com/open-compass/VLMEvalKit): We use VLMEvalKit for evaluation.
 
 ## Limitations
 Mulberry is a preliminary exploration work in o1-like MLLM, leveraging Collective Monte Carlo Tree Search to enable effective and efficient reasoning-path searching and learning. 
