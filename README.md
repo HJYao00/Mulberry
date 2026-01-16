@@ -17,7 +17,7 @@
 
 [Huanjin Yao](https://scholar.google.com/citations?user=pDtsCBQAAAAJ&hl=zh-CN)<sup>2,3*</sup>,
 [Jiaxing Huang](https://jxhuang0508.github.io/)<sup>1*✉️</sup>,
-[Wenhao Wu](https://whwu95.github.io/)<sup>3</sup>,
+[Wenhao Wu](https://whwu95.github.io/)<sup>3,5</sup>,
 [Jingyi Zhang]()<sup>1</sup>,
 [Yibo Wang]()<sup>2</sup>,
 [Shunyu Liu]()<sup>1</sup>,
@@ -29,7 +29,7 @@
 [Dacheng Tao]()<sup>1</sup>
 
 
-<sup>1</sup>[Nanyang Technological University](https://www.ntu.edu.sg/), <sup>2</sup>[Tsinghua University](https://www.tsinghua.edu.cn/en/), <sup>3</sup>[Baidu](https://vis.baidu.com/#/), <sup>4</sup>[SYSU](https://www.sysu.edu.cn/sysuen/)
+<sup>1</sup>[Nanyang Technological University](https://www.ntu.edu.sg/), <sup>2</sup>[Tsinghua University](https://www.tsinghua.edu.cn/en/), <sup>3</sup>[Baidu](https://vis.baidu.com/#/), <sup>4</sup>[SYSU](https://www.sysu.edu.cn/sysuen/), <sup>5</sup>[Amazon AGI]()
 
 <sup>*</sup>Equal Contribution,       <sup>✉️</sup>Corresponding Author
 
