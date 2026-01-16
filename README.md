@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1> <img src="figure/mulberry.png" style="vertical-align: -10px;" :height="50px" width="50px"> Mulberry: Empowering MLLM with o1-like Reasoning and Reflection via Collective Monte Carlo Tree Search </h1>
+<h1> [NIPS'25 Spotlight] <img src="figure/mulberry.png" style="vertical-align: -10px;" :height="50px" width="50px"> Mulberry: Empowering MLLM with o1-like Reasoning and Reflection via Collective Monte Carlo Tree Search </h1>
 
 <h5 align="center"> If you find this project useful, please give us a star🌟.
 
@@ -46,6 +46,7 @@
 
 
 ## News
+- [x] **`Sep 19, 2025.`** **Mulberry** has been accepted at NeurIPS 2025 as a spotlight! 🎉
 - [x] **`Feb 5, 2025.`** We release the [evaluation code](https://github.com/HJYao00/Mulberry/tree/main/evaluation) for [Mulberry_llama_11b](https://huggingface.co/HuanjinYao/Mulberry_llama_11b) and [Mulberry_qwen2vl_7b](https://huggingface.co/HuanjinYao/Mulberry_qwen2vl_7b).
 - [x] **`Feb 4, 2025.`** We release [Mulberry_llama_11b](https://huggingface.co/HuanjinYao/Mulberry_llama_11b) model and [Mulberry_qwen2vl_7b](https://huggingface.co/HuanjinYao/Mulberry_qwen2vl_7b) and their **reasoning inference code**.
 - [x] **`Jan 26, 2025.`** We release [Mulberry-260K](https://huggingface.co/datasets/HuanjinYao/Mulberry-SFT) step-by-step reasoning SFT data and [training code](https://github.com/HJYao00/Mulberry?tab=readme-ov-file#training).
